@@ -1,0 +1,39 @@
+.top-bar {
+  background: #f8f9fa;
+  font-weight: 600;
+  padding: 6px;
+}
+
+marquee {
+  color: #000;
+}
+
+.card {
+  border-radius: 8px;
+}
+.carousel-img {
+  height: 450px;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 15px;
+  border-radius: 8px;
+}
+/* .mainHomeCarousel{
+    height: 70%;
+    width: 80%;
+} */
+.benefit-list li {
+  font-size: 16px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.benefit-list svg {
+  color: #198754; /* Bootstrap green */
+}
+

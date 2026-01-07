@@ -1,0 +1,42 @@
+import React from 'react'
+import { Container, Row, Col } from "react-bootstrap";
+import Header from "../components/Header";
+import LeftSidebar from "../components/LeftSidebar";
+import HeroSection from "../components/HeroSection";
+import RightSidebar from "../components/RightSidebar";
+import HomeCarousel from "../components/HomeCarousel";
+import BenefitsOverview from "../components/BenefitsOverview";
+import WhyApplyDDJAY from "../components/WhyApplyDDJAY";
+import Footer from "../components/Footer";
+
+function Home() {
+  return (
+    <>
+      <Header />
+      <Container fluid className="mt-4">
+        <Row>
+          <Col md={3}>
+            <LeftSidebar />
+          </Col>
+
+          <Col md={6}>
+            <HeroSection />
+          </Col>
+
+          <Col md={3}>
+            <RightSidebar />
+          </Col>
+        </Row>
+      </Container>
+      <HomeCarousel/>
+      <BenefitsOverview/>
+      <WhyApplyDDJAY/>
+
+
+      <Footer/>
+
+    </>
+  )
+}
+
+export default Home

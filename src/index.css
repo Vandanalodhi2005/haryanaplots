@@ -1,0 +1,10 @@
+.btn.rounded-circle {
+  transition: transform 0.3s ease;
+}
+
+.btn.rounded-circle:hover {
+  transform: scale(1.1);
+}
+.about-image-wrapper:hover {
+  transform: scale(1.02);
+}
