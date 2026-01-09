@@ -7,7 +7,7 @@ const links = [
   { title: "NOC CERTIFICATE", file: "/pdfs/noc-certificate.pdf" },
   { title: "DTCP APPROVAL", file: "/pdfs/dtcp-approval.pdf" },
   { title: "PROJECT LAYOUT", file: "/pdfs/project-layout.pdf" },
-  { title: "PAYMENT PLAN", file: "/pdfs/payment-plan.pdf" },
+  { title: "PAYMENT PLAN", file: "/pdfs/payment.png" },
   { title: "PROJECT BROCHURE", file: "/pdfs/project-brochure.pdf" },
 ];
 
