@@ -16,7 +16,7 @@ export default function PlotRegistration() {
     const formData = new FormData(e.target);
 
     try {
-      const res = await fetch("http://localhost:5000/api/register", {
+      const res = await fetch("https://haryanashehriplot-backend.vercel.app/api/register", {
         method: "POST",
         body: formData,
       });

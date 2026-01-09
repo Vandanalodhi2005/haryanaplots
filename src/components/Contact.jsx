@@ -9,7 +9,7 @@ function Contact() {
     e.preventDefault();
     const formData = new FormData(e.target);
 
-    const res = await fetch("http://localhost:5000/api/contact", {
+    const res = await fetch("https://haryanashehriplot-backend.vercel.app/api/contact", {
       method: "POST",
       body: formData,
     });
