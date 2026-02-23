@@ -47,7 +47,7 @@ export default function LeftSidebar() {
       {/* Registration Card */}
       <Card className="mb-3 shadow-sm">
         <Card.Body className="text-center">
-          <h5 className="fw-bold text-success">Pay Just ₹11,000/-</h5>
+          <h5 className="fw-bold text-success">Pay Just ₹21,000/-</h5>
           <p className="mb-3">For Registration</p>
           <Button
             variant="success"
