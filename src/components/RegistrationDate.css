@@ -1,0 +1,90 @@
+.regdate-section {
+  padding: 36px 12px;
+  background: transparent;
+}
+
+.regdate-top {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.regdate-top h3 {
+  font-size: 22px;
+  margin: 0 0 12px 0;
+  color: #234; /* darkish */
+  font-weight: 800;
+}
+
+.reg-cta {
+  display: inline-block;
+  background: linear-gradient(135deg,#f31c1c,#df2909);
+  color: white;
+  padding: 10px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(255,100,100,0.12);
+  animation: buttonBlinkProminently 1.2s infinite;
+}
+
+.regdate-boxes {
+  display: flex;
+  gap: 0;
+  max-width: 1200px;
+  margin: 22px auto 0 auto;
+}
+
+.box {
+  flex: 1;
+  padding: 22px 20px;
+  color: white;
+  text-align: center;
+}
+
+.box h4 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.box p {
+  margin: 0;
+  font-size: 15px;
+  opacity: 0.95;
+  animation: colorBlink 1.5s infinite;
+}
+
+/* Color-change blinking animation for dates */
+@keyframes colorBlink {
+  0%, 49%, 100% {
+    color: white;
+  }
+  50%, 99% {
+    color: #ffeb3b;
+    font-size: larger;
+    font-weight: bold;
+  }
+}
+
+/* Prominent blinking animation for Registration Online button */
+@keyframes buttonBlinkProminently {
+  0%, 100% {
+    box-shadow: 0 8px 22px rgba(255, 107, 157, 0.2), 0 0 20px rgba(255, 107, 157, 0.1);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 12px 35px rgba(255, 50, 100, 0.5), 0 0 35px rgba(255, 107, 157, 0.4);
+    transform: scale(1.05);
+  }
+}
+
+.box-blue { background: #263c97; }
+.box-green { background: #11994b; }
+.box-red { background: #e61b1b; }
+
+/* Responsive: stack boxes on small screens */
+@media screen and (max-width: 880px) {
+  .regdate-boxes { flex-direction: column; }
+  .box { padding: 16px; }
+  .regdate-top h3 { font-size: 18px; }
+}

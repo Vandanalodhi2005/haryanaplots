@@ -13,12 +13,19 @@ export default function PlotRegistration() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
+    const form = e.target;
+    const payload = {
+      fullName: form.fullName.value,
+      phone: form.phone.value,
+      email: form.email.value,
+      aadhaarNumber: form.aadhaarNumber.value,
+    };
 
     try {
-      const res = await fetch("https://haryanashehriplot-backend.vercel.app/api/register", {
+      const res = await fetch("/api/register", {
         method: "POST",
-        body: formData,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
 
       const data = await res.json();
@@ -51,7 +58,7 @@ export default function PlotRegistration() {
                 </div>
 
                 <Card.Body className="p-4 p-md-5">
-                  <Form onSubmit={handleSubmit} encType="multipart/form-data">
+                  <Form onSubmit={handleSubmit}>
 
                     {/* Name */}
                     <Form.Group className="mb-3">
@@ -112,22 +119,7 @@ export default function PlotRegistration() {
                       />
                     </Form.Group>
 
-                    {/* Aadhaar PDF */}
-                    <Form.Group className="mb-4">
-                      <Form.Label className="fw-semibold">
-                        <FaFilePdf className="me-2 text-danger" />
-                        Upload Aadhaar Card (PDF) *
-                      </Form.Label>
-                      <Form.Control
-                        type="file"
-                        name="aadhaarPdf"   // ✅ MUST MATCH BACKEND
-                        accept="application/pdf"
-                        required
-                      />
-                      <Form.Text className="text-muted">
-                        PDF only • Max size 2 MB
-                      </Form.Text>
-                    </Form.Group>
+                    {/* Aadhaar PDF removed as requested */}
 
                     {/* Consent */}
                     <Form.Group className="mb-4">

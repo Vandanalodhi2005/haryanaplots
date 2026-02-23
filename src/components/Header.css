@@ -44,9 +44,23 @@
     justify-content: center;
     flex-shrink: 0;
 }
+.logo-section1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Rectangular logo container for section1 */
+.logo-section1 .logo-placeholder {
+    border-radius: 8px;
+    width: 140px;
+    height: 100px;
+   
+}
 
 .logo-placeholder {
-    background: white;
+    /* background: white; */
     border-radius: 50%;
     width: 80px;
     height: 80px;
@@ -54,7 +68,7 @@
     align-items: center;
     justify-content: center;
     font-size: 40px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); */
     font-weight: bold;
     color: #1e7e34;
     overflow: hidden;
@@ -73,14 +87,7 @@
     transform-origin: center;
 }
 
-.left-logo .logo-placeholder {
-    border: 3px solid #1e7e34;
-}
 
-.right-logo .logo-placeholder {
-    background: white;
-    border: 3px solid #1e7e34;
-}
 
 
 /* Logo Images */
@@ -90,6 +97,13 @@
     height: 100%;
     object-fit: contain;
     padding: 5px;
+}
+.logo-image1{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 5px;
+
 }
 
 
@@ -202,7 +216,7 @@
 /* Registration Button */
 
 .register-btn {
-    background: linear-gradient(135deg, #ff6b9d 0%, #ff8fab 100%);
+    background: linear-gradient(135deg, #ee3a17 0%, #fa2e18 100%);
     color: white;
     padding: 12px 24px;
     border-radius: 4px;
@@ -215,10 +229,11 @@
     box-shadow: 0 4px 12px rgba(255, 107, 157, 0.3);
     margin-left: auto;
     /* push to the far right */
+    animation: headerButtonBlinkProminently 1.2s infinite;
 }
 
 .register-btn:hover {
-    background: linear-gradient(135deg, #ff5a8c 0%, #ff799a 100%);
+    background: linear-gradient(135deg, #04920b 0%, #09ef33 100%);
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(255, 107, 157, 0.4);
@@ -227,6 +242,16 @@
 
 .register-btn:active {
     transform: translateY(0);
+}
+
+/* Prominent blinking animation for header register button */
+@keyframes headerButtonBlinkProminently {
+  0%, 100% {
+    box-shadow: 0 6px 16px rgba(255, 107, 157, 0.3), 0 0 15px rgba(255, 107, 157, 0.15);
+  }
+  50% {
+    box-shadow: 0 10px 28px rgba(255, 50, 100, 0.5), 0 0 30px rgba(255, 107, 157, 0.35);
+  }
 }
 
 
@@ -260,6 +285,10 @@
         height: 70px;
         font-size: 32px;
     }
+    .logo-section1 .logo-placeholder {
+        width: 120px;
+        height: 85px;
+    }
     .header-content {
         gap: 20px;
     }
@@ -287,6 +316,10 @@
         width: 60px;
         height: 60px;
         font-size: 24px;
+    }
+    .logo-section1 .logo-placeholder {
+        width: 100px;
+        height: 70px;
     }
     .header-content {
         gap: 15px;
@@ -420,6 +453,10 @@
         height: 55px;
         font-size: 20px;
     }
+    .logo-section1 .logo-placeholder {
+        width: 85px;
+        height: 60px;
+    }
     .header-content {
         gap: 10px;
         padding: 0 15px;
@@ -445,6 +482,124 @@
 
 
 /* ==================== ANIMATIONS & TRANSITIONS ==================== */
+
+/* Mobile adjustments to match compact UI in screenshot */
+@media screen and (max-width: 768px) {
+    /* keep header items compact in a single row */
+    .header-content {
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        padding: 6px 12px;
+        flex-wrap: nowrap;
+    }
+
+    /* title shrinks but stays centered within available space */
+    .center-title {
+        min-width: 0;
+        flex: 1 1 auto;
+        text-align: center;
+        padding: 4px 0;
+    }
+
+    /* keep logos inline (left/center/right) and small */
+    .logo-section1, .left-logo, .right-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* rectangular logo size adjustments for mobile */
+    .logo-section1 .logo-placeholder {
+        width: 92px;
+        height: 64px;
+        border-radius: 6px;
+        padding: 4px;
+        box-sizing: border-box;
+        
+    }
+
+    /* ensure the image keeps its aspect and doesn't stretch */
+    .logo-section1 .logo-image,
+    .logo-section1 .logo-placeholder img {
+        max-width: 92%;
+        max-height: 92%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* show project-info as a full-width green strip under the orange header */
+    .project-info {
+        background: #0b7d3e;
+        color: #fff;
+        padding: 8px 12px;
+        font-weight: 600;
+        margin-top: 8px;
+        border-radius: 4px;
+        text-align: center;
+    }
+
+    /* align nav controls: hamburger left, register button right */
+    .nav-container {
+        justify-content: space-between;
+        padding: 0 12px;
+    }
+    .hamburger {
+        order: 1;
+        margin-right: 8px;
+        display: block;
+    }
+    .register-btn {
+        order: 3;
+        margin-left: auto;
+        padding: 8px 12px;
+        font-size: 12px;
+        border-radius: 6px;
+    }
+
+    /* keep the mobile menu hidden until opened (existing animation preserved by .active) */
+    .nav-menu {
+        display: none;
+    }
+    .nav-menu.active {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* maintain compact inline layout on very small screens */
+    .header-content {
+        flex-direction: row;
+        gap: 8px;
+        padding: 6px 8px;
+        align-items: center;
+    }
+
+    .logo-section1 .logo-placeholder {
+        width: 80px;
+        height: 54px;
+        border-radius: 6px;
+    }
+
+    .left-logo .logo-placeholder,
+    .right-logo .logo-placeholder {
+        width: 46px;
+        height: 46px;
+    }
+
+    .center-title h1 {
+        font-size: 20px;
+        line-height: 1.1;
+    }
+
+    .project-info {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
 
 @keyframes slideDown {
     from {

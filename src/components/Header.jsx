@@ -3,6 +3,7 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -27,13 +28,18 @@ export default function Header() {
       {/* Top Green Banner */}
       <div className="top-banner">
         <marquee>
-आवेदन प्रारंभ तिथि 1st February 2026 | आवेदन की अंतिम तिथि 08th March 2026 | आवंटन की तिथि 12th March 2026 | रजिस्ट्रेशन अमाउंट केवल Rs. 31,000/- | Plot Sizes : - 120.3 - 157.81 sq. yards | 30 प्लॉट्स के लिए आवेदन लिए जा रहे है | 33% कोटा महिलाओं एवं सरकारी कर्मचारियों के लिए आरक्षित हैं
+       आवेदन प्रारंभ तिथि 23rd February 2026 | आवेदन की अंतिम तिथि 14th March 2026 | आवंटन की तिथि 18th March 2026 | रजिस्ट्रेशन अमाउंट केवल Rs. 21,000/- | Plot Sizes : - 100 sq. yards | 39 प्लॉट्स के लिए आवेदन लिए जा रहे है | 33% कोटा महिलाओं एवं सरकारी कर्मचारियों के लिए आरक्षित हैं
         </marquee>
       </div>
 
       {/* Orange Header Section */}
       <div className="orange-header">
         <div className="header-content">
+          <div className="logo-section1 left-logo1">
+            <div className="logo-placeholder left-logo-container">
+              <img src="/logo/swachh.png" alt="Haryana Plot Logo" className="logo-image1" />
+            </div>
+          </div>
           {/* Left Logo Section */}
           <div className="logo-section left-logo">
             <div className="logo-placeholder left-logo-container">
@@ -93,7 +99,7 @@ export default function Header() {
           </div>
 
           {/* Registration Button */}
-          <Link to="/register" className="register-btn" onClick={closeMenu}>
+          <Link to="/plotregistration" className="register-btn" onClick={closeMenu}>
             REGISTRATION ONLINE
           </Link>
 

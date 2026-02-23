@@ -7,11 +7,19 @@ import Footer from "./Footer.jsx";
 function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
+    const form = e.target;
+    const payload = {
+      name: form.name.value,
+      phone: form.phone.value,
+      email: form.email.value,
+      aadhaarNumber: form.aadhaarNumber.value,
+      message: form.message.value,
+    };
 
-    const res = await fetch("https://haryanashehriplot-backend.vercel.app/api/contact", {
+    const res = await fetch("/api/contact", {
       method: "POST",
-      body: formData,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
     });
 
     const data = await res.json();
@@ -37,11 +45,7 @@ function Contact() {
 
           <div className="contact-container">
             {/* Left Form */}
-            <form
-              className="contact-form"
-              onSubmit={handleSubmit}
-              encType="multipart/form-data"
-            >
+            <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label>
                   <FaUser /> Full Name <span>*</span>
@@ -83,18 +87,7 @@ function Contact() {
                 />
               </div>
 
-              <div className="form-group">
-                <label>
-                  <FaFilePdf /> Upload Aadhaar (PDF) <span>*</span>
-                </label>
-                <input
-                  type="file"
-                  name="aadhaarPdf"
-                  accept="application/pdf"
-                  required
-                />
-                <small>Only PDF allowed (Max 2MB)</small>
-              </div>
+              {/* Aadhaar PDF removed as requested */}
 
               <div className="form-group">
                 <label>Message <span>*</span></label>

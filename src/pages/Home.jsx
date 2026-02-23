@@ -7,6 +7,8 @@ import RightSidebar from "../components/RightSidebar";
 import HomeCarousel from "../components/HomeCarousel";
 import BenefitsOverview from "../components/BenefitsOverview";
 import WhyApplyDDJAY from "../components/WhyApplyDDJAY";
+import RegistrationDate from "../components/RegistrationDate";
+import PaymentPlan from "../components/PaymentPlan";
 import Footer from "../components/Footer";
 
 function Home() {
@@ -28,10 +30,13 @@ function Home() {
           </Col>
         </Row>
       </Container>
-      <HomeCarousel/>
+      <RegistrationDate />
+      <PaymentPlan />
+      {/* <HomeCarousel/> */}
       <BenefitsOverview/>
       <WhyApplyDDJAY/>
 
+    
 
       <Footer/>
 

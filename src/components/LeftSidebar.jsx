@@ -6,7 +6,7 @@ export default function LeftSidebar() {
   const navigate = useNavigate();
 
   // 👉 SET STATIC TARGET DATE HERE
-  const targetDate = new Date("2026-01-10T23:59:59"); // YYYY-MM-DD
+  const targetDate = new Date("2026-03-14T23:59:59"); // YYYY-MM-DD
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
