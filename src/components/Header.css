@@ -1,439 +1,511 @@
 /* ==================== TOP BANNER ==================== */
+
 .top-banner {
-  background: linear-gradient(90deg, #1e7e34 0%, #2d9a4a 100%);
-  color: white;
-  padding: 12px 0;
-  font-size: 14px;
-  font-weight: 500;
-  overflow: hidden;
+    background: linear-gradient(90deg, #1e7e34 0%, #2d9a4a 100%);
+    color: white;
+    padding: 12px 0;
+    font-size: 14px;
+    font-weight: 500;
+    overflow: hidden;
 }
 
 .top-banner marquee {
-  color: white;
-  font-family: 'Arial', sans-serif;
-  letter-spacing: 0.5px;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 0.5px;
 }
 
+
 /* ==================== ORANGE HEADER SECTION ==================== */
+
 .orange-header {
-  background: linear-gradient(135deg, #ff9500 0%, #ffb84d 100%);
-  padding: 20px 0;
-  font-weight: 600;
+    background: linear-gradient(135deg, #ff9500 0%, #ffb84d 100%);
+    padding: 20px 0;
+    font-weight: 600;
 }
 
 .header-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
 }
 
+
 /* Logo Sections */
+
 .logo-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
 .logo-placeholder {
-  background: white;
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 40px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  font-weight: bold;
-  color: #1e7e34;
-  overflow: hidden;
+    background: white;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    font-weight: bold;
+    color: #1e7e34;
+    overflow: hidden;
+}
+
+
+/* enlarge left logo slightly */
+
+.left-logo .logo-placeholder {
+    width: 90px;
+    height: 90px;
+}
+
+.left-logo .logo-image {
+    transform: scale(1.2);
+    transform-origin: center;
 }
 
 .left-logo .logo-placeholder {
-  border: 3px solid #1e7e34;
+    border: 3px solid #1e7e34;
 }
 
 .right-logo .logo-placeholder {
-  background: white;
-  border: 3px solid #1e7e34;
+    background: white;
+    border: 3px solid #1e7e34;
 }
+
 
 /* Logo Images */
+
 .logo-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 5px;
 }
 
+
 /* Center Title */
+
 .center-title {
-  text-align: center;
-  color: white;
-  flex: 1;
-  min-width: 250px;
+    text-align: center;
+    color: white;
+    flex: 1;
+    min-width: 250px;
 }
 
 .center-title h1 {
-  font-size: 48px;
-  font-weight: 700;
-  margin: 0;
-  padding: 0;
-  line-height: 1.2;
-  font-family: 'Devanagari', 'Arial', sans-serif;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  letter-spacing: 1px;
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    font-family: 'Devanagari', 'Arial', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
 }
 
 .center-title .subtitle {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.9);
-  margin: 8px 0 0 0;
-  padding: 0;
-  font-style: italic;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 8px 0 0 0;
+    padding: 0;
+    font-style: italic;
 }
+
 
 /* Project Info */
+
 .project-info {
-  text-align: center;
-  color: white;
-  font-size: 13px;
-  font-weight: 600;
-  padding: 10px 0 0 0;
-  letter-spacing: 0.5px;
+    text-align: center;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 0 0 0;
+    letter-spacing: 0.5px;
 }
 
+
 /* ==================== NAVIGATION BAR ==================== */
+
 .navbar-custom {
-  background: #f5f0e8;
-  padding: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+    /* light background with dark links */
+    background: #fff;
+    padding: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
-  height: 60px;
+    display: flex;
+    justify-content: center;
+    /* center links and allow button to float right */
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 60px;
+    position: relative;
+    /* needed for absolute child if used */
 }
 
 .nav-menu {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-  flex: 1;
+    display: flex;
+    gap: 20px;
+    /* increased spacing between links */
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+    /* center the link group */
 }
 
 .nav-link {
-  color: #333;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 500;
-  padding: 20px 18px;
-  display: flex;
-  align-items: center;
-  border-bottom: 3px solid transparent;
-  transition: all 0.3s ease;
-  white-space: nowrap;
+    color: #333;
+    /* dark text on light background */
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px 20px;
+    /* comfortable click area */
+    margin: 0 4px;
+    /* small horizontal margin */
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .nav-link:hover {
-  background-color: rgba(255, 149, 0, 0.1);
-  color: #ff9500;
-  border-bottom-color: #ff9500;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #ff9500;
+    border-bottom-color: #ff9500;
 }
 
 .nav-link:active,
 .nav-link.active {
-  border-bottom-color: #ff9500;
-  color: #ff9500;
+    border-bottom-color: #ff9500;
+    color: #ff9500;
 }
 
+
 /* Registration Button */
+
 .register-btn {
-  background: linear-gradient(135deg, #ff6b9d 0%, #ff8fab 100%);
-  color: white;
-  padding: 12px 24px;
-  border-radius: 4px;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(255, 107, 157, 0.3);
+    background: linear-gradient(135deg, #ff6b9d 0%, #ff8fab 100%);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(255, 107, 157, 0.3);
+    margin-left: auto;
+    /* push to the far right */
 }
 
 .register-btn:hover {
-  background: linear-gradient(135deg, #ff5a8c 0%, #ff799a 100%);
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(255, 107, 157, 0.4);
-  text-decoration: none;
+    background: linear-gradient(135deg, #ff5a8c 0%, #ff799a 100%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 107, 157, 0.4);
+    text-decoration: none;
 }
 
 .register-btn:active {
-  transform: translateY(0);
+    transform: translateY(0);
 }
 
+
 /* Hamburger Menu */
+
 .hamburger {
-  display: none;
-  font-size: 24px;
-  color: #333;
-  cursor: pointer;
-  padding: 8px;
-  transition: all 0.3s ease;
+    display: none;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    padding: 8px;
+    transition: all 0.3s ease;
 }
 
 .hamburger:hover {
-  color: #ff9500;
+    color: #ff9500;
 }
+
 
 /* ==================== RESPONSIVE DESIGN ==================== */
 
+
 /* Tablets */
+
 @media screen and (max-width: 1024px) {
-  .center-title h1 {
-    font-size: 36px;
-  }
-
-  .logo-placeholder {
-    width: 70px;
-    height: 70px;
-    font-size: 32px;
-  }
-
-  .header-content {
-    gap: 20px;
-  }
-
-  .nav-link {
-    padding: 15px 12px;
-    font-size: 14px;
-  }
-
-  .register-btn {
-    padding: 10px 18px;
-    font-size: 12px;
-  }
+    .center-title h1 {
+        font-size: 36px;
+    }
+    .logo-placeholder {
+        width: 70px;
+        height: 70px;
+        font-size: 32px;
+    }
+    .header-content {
+        gap: 20px;
+    }
+    .nav-link {
+        padding: 15px 12px;
+        font-size: 14px;
+    }
+    .register-btn {
+        padding: 10px 18px;
+        font-size: 12px;
+    }
 }
+
 
 /* Mobile */
+
 @media screen and (max-width: 768px) {
-  .center-title h1 {
-    font-size: 28px;
-  }
-
-  .center-title .subtitle {
-    font-size: 12px;
-  }
-
-  .logo-placeholder {
-    width: 60px;
-    height: 60px;
-    font-size: 24px;
-  }
-
-  .header-content {
-    gap: 15px;
-  }
-
-  .project-info {
-    font-size: 11px;
-    padding: 8px 20px;
-  }
-
-  .nav-container {
-    height: auto;
-    padding: 0;
-  }
-
-  .hamburger {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 15px;
-  }
-
-  .nav-menu {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background: #f5f0e8;
-    flex-direction: column;
-    gap: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    border-bottom: 1px solid #ddd;
-  }
-
-  .nav-menu.active {
-    max-height: 400px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-link {
-    padding: 15px 20px;
-    border-bottom: 1px solid #eee;
-    border-left: 4px solid transparent;
-    width: 100%;
-    border-bottom-style: none;
-  }
-
-  .nav-link:hover {
-    background-color: rgba(255, 149, 0, 0.15);
-    border-left-color: #ff9500;
-  }
-
-  .register-btn {
-    padding: 12px 16px;
-    font-size: 11px;
-    letter-spacing: 0.5px;
-    margin: 15px;
-    width: calc(100% - 30px);
-    text-align: center;
-    margin-top: auto;
-  }
-
-  .navbar-custom {
-    position: relative;
-  }
-
-  .nav-container {
-    flex-wrap: wrap;
-    position: relative;
-  }
-
-  .register-btn {
-    order: -1;
-    width: auto;
-    margin: 10px 15px;
-  }
+    .center-title h1 {
+        font-size: 28px;
+    }
+    .center-title .subtitle {
+        font-size: 12px;
+    }
+    .logo-placeholder {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+    .header-content {
+        gap: 15px;
+    }
+    .project-info {
+        font-size: 11px;
+        padding: 8px 20px;
+    }
+    .nav-container {
+        height: auto;
+        padding: 0;
+        justify-content: space-between;
+        /* hamburger left, button right */
+    }
+    .hamburger {
+        display: block;
+        font-size: 26px;
+        z-index: 1100;
+        position: relative;
+    }
+    .nav-menu {
+        position: fixed;
+        top: 5vh;
+        left: 5%;
+        width: 90%;
+        height: 90vh;
+        background: linear-gradient(135deg, #ff9500, #ff6b9d);
+        flex-direction: column;
+        /* justify-content: center; */
+        /* align-items: center; */
+        gap: 25px;
+        transform: translateY(calc(-100% - 5vh));
+        transition: transform 0.4s ease-in-out;
+        z-index: 1000;
+    }
+    .nav-menu.active {
+        transform: translateY(0);
+    }
+    /* close icon inside mobile menu; hidden by default on desktop */
+    .menu-close-btn {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 36px;
+        height: 36px;
+        display: none;
+        /* only show in mobile media query below */
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        font-size: 24px;
+        color: #333;
+        cursor: pointer;
+        z-index: 1100;
+    }
+    .nav-link {
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+        padding: 10px 0;
+        border: none;
+    }
+    .nav-link:hover {
+        color: #fff;
+        transform: scale(1.1);
+    }
+    .mobile-register {
+        margin-top: 20px;
+        background: white;
+        color: #ff6b9d;
+        font-size: 16px;
+        padding: 14px 30px;
+        border-radius: 30px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+    .mobile-register:hover {
+        background: #fff;
+        transform: scale(1.05);
+    }
+    .register-btn {
+        padding: 12px 16px;
+        font-size: 11px;
+        letter-spacing: 0.5px;
+        margin: 15px;
+        width: calc(100% - 30px);
+        text-align: center;
+        margin-top: auto;
+        order: 2;
+        /* put after hamburger */
+        width: auto;
+        margin: 10px 15px;
+    }
+    .navbar-custom {
+        position: relative;
+    }
+    .nav-container {
+        flex-wrap: wrap;
+        position: relative;
+    }
 }
+
+
+/* only display close icon on small screens */
+
+@media screen and (max-width: 768px) {
+    .menu-close-btn {
+        display: flex;
+    }
+}
+
 
 /* Small Mobile */
+
 @media screen and (max-width: 480px) {
-  .top-banner {
-    padding: 10px 0;
-    font-size: 12px;
-  }
-
-  .orange-header {
-    padding: 15px 0;
-  }
-
-  .center-title h1 {
-    font-size: 22px;
-  }
-
-  .center-title .subtitle {
-    font-size: 10px;
-  }
-
-  .logo-placeholder {
-    width: 55px;
-    height: 55px;
-    font-size: 20px;
-  }
-
-  .header-content {
-    gap: 10px;
-    padding: 0 15px;
-  }
-
-  .project-info {
-    font-size: 10px;
-    padding: 6px 15px;
-  }
-
-  .nav-link {
-    font-size: 13px;
-    padding: 12px 15px;
-  }
-
-  .hamburger {
-    font-size: 20px;
-    padding: 10px;
-  }
-
-  .register-btn {
-    padding: 10px 14px;
-    font-size: 10px;
-    margin: 8px;
-  }
+    .top-banner {
+        padding: 10px 0;
+        font-size: 12px;
+    }
+    .orange-header {
+        padding: 15px 0;
+    }
+    .center-title h1 {
+        font-size: 22px;
+    }
+    .center-title .subtitle {
+        font-size: 10px;
+    }
+    .logo-placeholder {
+        width: 55px;
+        height: 55px;
+        font-size: 20px;
+    }
+    .header-content {
+        gap: 10px;
+        padding: 0 15px;
+    }
+    .project-info {
+        font-size: 10px;
+        padding: 6px 15px;
+    }
+    .nav-link {
+        font-size: 13px;
+        padding: 12px 15px;
+    }
+    .hamburger {
+        font-size: 20px;
+        padding: 10px;
+    }
+    .register-btn {
+        padding: 10px 14px;
+        font-size: 10px;
+        margin: 8px;
+    }
 }
 
+
 /* ==================== ANIMATIONS & TRANSITIONS ==================== */
+
 @keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .nav-menu.active {
-  animation: slideDown 0.3s ease;
+    animation: slideDown 0.3s ease;
 }
+
 
 /* Smooth transitions for all interactive elements */
+
 a,
 button {
-  transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
+
 
 /* ==================== ACCESSIBILITY ==================== */
+
 .nav-link:focus,
 .register-btn:focus {
-  outline: 2px solid #ff9500;
-  outline-offset: 2px;
+    outline: 2px solid #ff9500;
+    outline-offset: 2px;
 }
+
 
 /* High contrast mode support */
-@media (prefers-contrast: more) {
-  .nav-link {
-    font-weight: 600;
-  }
 
-  .center-title h1 {
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-  }
+@media (prefers-contrast: more) {
+    .nav-link {
+        font-weight: 600;
+    }
+    .center-title h1 {
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    }
 }
 
+
 /* Dark mode support */
+
 @media (prefers-color-scheme: dark) {
-  .navbar-custom {
-    background: #2a2a2a;
-  }
-
-  .nav-link {
-    color: #e0e0e0;
-  }
-
-  .nav-link:hover {
-    color: #ffb84d;
-    background-color: rgba(255, 149, 0, 0.15);
-  }
-
-  .nav-menu {
-    background: #2a2a2a;
-  }
+    /* keep light styling even when OS is dark */
+    .navbar-custom {
+        background: #fff;
+    }
+    .nav-link {
+        color: #333;
+    }
+    .nav-link:hover {
+        color: #ff9500;
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+    .nav-menu {
+        background: #fff;
+    }
 }

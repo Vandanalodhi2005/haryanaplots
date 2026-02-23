@@ -5,6 +5,14 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  // update mobile flag on resize
+  React.useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -29,7 +37,7 @@ export default function Header() {
           {/* Left Logo Section */}
           <div className="logo-section left-logo">
             <div className="logo-placeholder left-logo-container">
-              <img src="/logo/logo2.png" alt="Haryana Plot Logo" className="logo-image" />
+              <img src="/logo/hplogo.png" alt="Haryana Plot Logo" className="logo-image" />
             </div>
           </div>
 
@@ -58,6 +66,12 @@ export default function Header() {
         <div className="nav-container">
           {/* Navigation Menu */}
           <div className={`nav-menu ${menuOpen ? "active" : ""}`}>
+            {/* close icon shown inside mobile dropdown */}
+            {isMobile && (
+              <div className="menu-close-btn" onClick={closeMenu}>
+                <FaTimes size={24} />
+              </div>
+            )}
             <Link to="/" className="nav-link" onClick={closeMenu}>
               Home
             </Link>
@@ -84,9 +98,11 @@ export default function Header() {
           </Link>
 
           {/* Mobile Menu Toggle */}
-          <div className="hamburger" onClick={toggleMenu}>
-            {menuOpen ? <FaTimes /> : <FaBars />}
-          </div>
+          {isMobile && (
+            <div className="hamburger" onClick={toggleMenu}>
+              {menuOpen ? <FaTimes color="#fff" size={28} /> : <FaBars color="#333" size={28} />}
+            </div>
+          )}
         </div>
       </nav>
     </>
