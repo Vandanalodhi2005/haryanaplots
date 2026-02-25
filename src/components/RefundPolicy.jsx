@@ -1,12 +1,9 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import Header from "./Header";
-import Footer from "./Footer";
 
 export default function RefundPolicy() {
   return (
     <>
-    <Header />
     <Container className="py-5">
       <Row className="justify-content-center">
         <Col md={10}>
@@ -82,7 +79,7 @@ export default function RefundPolicy() {
         </Col>
       </Row>
     </Container>
-    <Footer />
+    {/* Footer provided by Layout */}
     </>
   );
 }

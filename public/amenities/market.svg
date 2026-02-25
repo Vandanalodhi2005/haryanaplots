@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" style="background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);">
+  <!-- Attached Market -->
+  <g>
+    <rect x="50" y="100" width="300" height="120" fill="#2d5016" rx="8"/>
+    <rect x="70" y="115" width="50" height="90" fill="#ff6b35" rx="3"/>
+    <text x="95" y="200" font-size="12" text-anchor="middle" fill="white" font-weight="bold">FRUITS</text>
+    <rect x="130" y="110" width="50" height="95" fill="#228b22" rx="3"/>
+    <text x="155" y="200" font-size="12" text-anchor="middle" fill="white" font-weight="bold">VEG</text>
+    <rect x="190" y="105" width="50" height="100" fill="#ffd700" rx="3"/>
+    <text x="215" y="200" font-size="12" text-anchor="middle" fill="#333" font-weight="bold">GRAIN</text>
+    <rect x="250" y="115" width="50" height="90" fill="#ff69b4" rx="3"/>
+    <text x="275" y="200" font-size="12" text-anchor="middle" fill="white" font-weight="bold">SHOP</text>
+    <line x1="60" y1="230" x2="340" y2="230" stroke="#1e7e34" stroke-width="3"/>
+    <text x="200" y="280" font-size="20" font-weight="bold" text-anchor="middle" fill="#1e7e34">Attached Market</text>
+  </g>
+</svg>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Card, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import "./LeftSidebar.css";
 
 export default function LeftSidebar() {
   const navigate = useNavigate();
@@ -51,7 +52,7 @@ export default function LeftSidebar() {
           <p className="mb-3">For Registration</p>
           <Button
             variant="success"
-            className="fw-bold"
+            className="fw-bold register-btn"
             onClick={navigateToRegistrationPage}
           >
             REGISTRATION OPEN
@@ -60,9 +61,9 @@ export default function LeftSidebar() {
       </Card>
 
       {/* Countdown Card */}
-      <Card className="mb-3 shadow-sm text-center">
+      <Card className="mb-3 shadow-sm text-center countdown-card">
         <Card.Body>
-          <h6 className="fw-bold text-danger mb-3">
+          <h6 className="fw-bold text-danger mb-3 countdown-title">
             Registration Closes In
           </h6>
 

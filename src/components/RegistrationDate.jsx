@@ -3,6 +3,7 @@ import "./RegistrationDate.css";
 
 export default function RegistrationDate() {
   return (
+    <>
     <section className="regdate-section">
       <div className="regdate-top">
         <h3>33% plots are reserved for government employees and women</h3>
@@ -12,12 +13,12 @@ export default function RegistrationDate() {
       <div className="regdate-boxes">
         <div className="box box-blue">
           <h4>Registration Start Date</h4>
-          <p>23rd February 2026 (Sunday) 09:00 AM</p>
+          <p>23rd February 2026 (Monday) 09:00 AM</p>
         </div>
 
         <div className="box box-green">
           <h4>Last Date of Registration</h4>
-          <p>14th March 2026 (Sunday) 23:59 PM</p>
+          <p>14th March 2026 (Saturday) 23:59 PM</p>
         </div>
 
         <div className="box box-red">
@@ -26,5 +27,7 @@ export default function RegistrationDate() {
         </div>
       </div>
     </section>
+    </>
+    
   );
 }

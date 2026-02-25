@@ -1,0 +1,285 @@
+/* ==================== AMENITIES SECTION ==================== */
+
+.amenities-section {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #fffdf8 100%);
+  min-height: 100vh;
+}
+
+.amenities-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.amenities-header {
+  text-align: center;
+  margin-bottom: 50px;
+  animation: slideDown 0.6s ease-out;
+}
+
+.amenities-header h2 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #1e7e34;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.amenities-header p {
+  font-size: 18px;
+  color: #666;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ==================== TAB NAVIGATION ==================== */
+
+.tab-navigation {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  animation: slideUp 0.6s ease-out;
+}
+
+.tab-btn {
+  padding: 12px 28px;
+  border: 2px solid #ddd;
+  background: white;
+  color: #333;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.tab-btn:hover {
+  border-color: #1e7e34;
+  color: #1e7e34;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 126, 52, 0.15);
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, #1e7e34, #2d9a4a);
+  color: white;
+  border-color: #1e7e34;
+  box-shadow: 0 6px 20px rgba(30, 126, 52, 0.25);
+}
+
+/* ==================== AMENITIES GRID ==================== */
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.amenity-card {
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.amenity-image {
+  width: 100%;
+  height: 220px;
+  margin-bottom: 16px;
+  border-radius: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  animation: fadeIn 0.6s ease-out;
+  border: 1px solid #ddd;
+}
+
+.amenity-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.amenity-card:hover .amenity-image img {
+  transform: scale(1.05);
+}
+
+.amenity-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  padding: 8px 0;
+}
+
+/* ==================== ANIMATIONS ==================== */
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+@media screen and (max-width: 1024px) {
+  .amenities-section {
+    padding: 50px 16px;
+  }
+
+  .amenities-header h2 {
+    font-size: 36px;
+  }
+
+  .amenities-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  .amenity-image {
+    height: 180px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .amenities-section {
+    padding: 40px 12px;
+  }
+
+  .amenities-header {
+    margin-bottom: 36px;
+  }
+
+  .amenities-header h2 {
+    font-size: 28px;
+  }
+
+  .amenities-header p {
+    font-size: 16px;
+  }
+
+  .tab-navigation {
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+
+  .tab-btn {
+    padding: 10px 20px;
+    font-size: 13px;
+    border-radius: 6px;
+  }
+
+  .amenities-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .amenity-image {
+    height: 150px;
+    margin-bottom: 12px;
+  }
+
+  .amenity-title {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .amenities-section {
+    padding: 30px 12px;
+    min-height: auto;
+  }
+
+  .amenities-header {
+    margin-bottom: 28px;
+  }
+
+  .amenities-header h2 {
+    font-size: 22px;
+  }
+
+  .amenities-header p {
+    font-size: 14px;
+  }
+
+  .tab-navigation {
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+
+  .tab-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .amenities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .amenity-image {
+    height: 120px;
+  }
+
+  .amenity-title {
+    font-size: 12px;
+  }
+}
+
+/* ==================== ACCESSIBILITY ==================== */
+
+.tab-btn:focus {
+  outline: 2px solid #1e7e34;
+  outline-offset: 2px;
+}
+
+.amenity-card:focus-within {
+  outline: 2px solid #1e7e34;
+  outline-offset: 2px;
+}

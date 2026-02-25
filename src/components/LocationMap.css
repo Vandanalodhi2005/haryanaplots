@@ -1,0 +1,623 @@
+/* ==================== LOCATION MAP SECTION ==================== */
+
+.location-section {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #fffdf8 100%);
+  min-height: 100vh;
+}
+
+.location-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ==================== HEADER ==================== */
+
+.location-header {
+  text-align: center;
+  margin-bottom: 50px;
+  animation: slideDown 0.6s ease-out;
+}
+
+.location-header h2 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #1e7e34;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.location-header p {
+  font-size: 18px;
+  color: #666;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ==================== MAP CONTAINER ==================== */
+
+.map-container {
+  margin-bottom: 50px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(30, 126, 52, 0.15);
+  animation: slideUp 0.6s ease-out;
+}
+
+.map-container iframe {
+  display: block;
+  border-radius: 12px;
+}
+
+/* ==================== NEARBY LOCATIONS ==================== */
+
+.nearby-locations {
+  margin-bottom: 50px;
+}
+
+.nearby-locations h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e7e34;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.location-cards {
+  display: grid;
+  gap: 20px;
+}
+
+.location-card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  border: 2px solid #e8e8e8;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.location-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(30, 126, 52, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.location-card:hover::before {
+  left: 100%;
+}
+
+.location-card:hover {
+  border-color: #1e7e34;
+  box-shadow: 0 12px 32px rgba(30, 126, 52, 0.15);
+  transform: translateX(8px);
+}
+
+.location-card.active {
+  background: linear-gradient(135deg, #f0f8f4 0%, #e8f5f0 100%);
+  border-color: #1e7e34;
+  box-shadow: 0 12px 32px rgba(30, 126, 52, 0.2);
+}
+
+.location-icon {
+  font-size: 48px;
+  flex-shrink: 0;
+  animation: bounce 0.6s ease-out;
+}
+
+.location-image {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f0f8f4 0%, #e8f5f0 100%);
+}
+
+.location-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.location-card:hover .location-image img {
+  transform: scale(1.1);
+}
+
+.location-info {
+  flex: 1;
+}
+
+.location-info h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e7e34;
+  margin: 0 0 6px 0;
+}
+
+.location-info .distance {
+  font-size: 14px;
+  color: #ff9500;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.location-info .desc {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.location-arrow {
+  font-size: 28px;
+  color: #1e7e34;
+  transition: transform 0.3s ease;
+}
+
+.location-card:hover .location-arrow {
+  transform: translateX(8px);
+}
+
+/* ==================== CONNECTIVITY GRID ==================== */
+
+.connectivity-grid {
+  margin-bottom: 50px;
+}
+
+.connectivity-grid h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e7e34;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.benefit-card {
+  background: white;
+  padding: 30px 24px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #e8e8e8;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(30, 126, 52, 0.15);
+  border-color: #1e7e34;
+}
+
+.benefit-icon {
+  font-size: 44px;
+  margin-bottom: 16px;
+}
+
+.benefit-image {
+  width: 100%;
+  height: 180px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f0f8f4 0%, #e8f5f0 100%);
+}
+
+.benefit-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.benefit-card:hover .benefit-image img {
+  transform: scale(1.08);
+}
+
+.benefit-card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e7e34;
+  margin: 0 0 10px 0;
+}
+
+.benefit-card p {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ==================== DISTANCE CHART ==================== */
+
+.distance-section {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.distance-section h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e7e34;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.distance-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.distance-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.distance-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+.distance-bar {
+  width: 100%;
+  height: 16px;
+  background: #e8e8e8;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.distance-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1e7e34, #2d9a4a);
+  border-radius: 10px;
+  animation: fillBar 0.8s ease-out;
+}
+
+.distance-time {
+  font-size: 12px;
+  color: #ff9500;
+  font-weight: 600;
+}
+
+@keyframes fillBar {
+  from {
+    width: 0 !important;
+  }
+}
+
+/* ==================== ANIMATIONS ==================== */
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+@media screen and (max-width: 1024px) {
+  .location-section {
+    padding: 50px 16px;
+  }
+
+  .location-header h2 {
+    font-size: 36px;
+  }
+
+  .location-card {
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .location-icon {
+    font-size: 40px;
+  }
+
+  .location-image {
+    width: 90px;
+    height: 90px;
+  }
+
+  .location-info h4 {
+    font-size: 18px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+  }
+
+  .benefit-card {
+    padding: 24px 18px;
+  }
+
+  .benefit-image {
+    height: 160px;
+  }
+
+  .distance-section {
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .location-section {
+    padding: 40px 12px;
+  }
+
+  .location-header {
+    margin-bottom: 36px;
+  }
+
+  .location-header h2 {
+    font-size: 28px;
+  }
+
+  .location-header p {
+    font-size: 16px;
+  }
+
+  .map-container {
+    margin-bottom: 36px;
+  }
+
+  .map-container iframe {
+    height: 350px !important;
+  }
+
+  .nearby-locations h3,
+  .connectivity-grid h3 {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .location-card {
+    gap: 12px;
+    padding: 16px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .location-icon {
+    font-size: 36px;
+  }
+
+  .location-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .location-info h4 {
+    font-size: 16px;
+  }
+
+  .location-info .desc {
+    font-size: 13px;
+  }
+
+  .location-arrow {
+    display: none;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .benefit-card {
+    padding: 18px 14px;
+  }
+
+  .benefit-icon {
+    font-size: 36px;
+  }
+
+  .benefit-image {
+    height: 140px;
+  }
+
+  .benefit-card h4 {
+    font-size: 14px;
+  }
+
+  .benefit-card p {
+    font-size: 12px;
+  }
+
+  .distance-section {
+    padding: 24px;
+  }
+
+  .distance-section h3 {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+
+  .distance-label {
+    font-size: 13px;
+  }
+
+  .distance-bar {
+    height: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .location-section {
+    padding: 30px 12px;
+    min-height: auto;
+  }
+
+  .location-header {
+    margin-bottom: 28px;
+  }
+
+  .location-header h2 {
+    font-size: 22px;
+  }
+
+  .location-header p {
+    font-size: 14px;
+  }
+
+  .map-container {
+    margin-bottom: 28px;
+    border-radius: 8px;
+  }
+
+  .map-container iframe {
+    height: 280px !important;
+    border-radius: 8px;
+  }
+
+  .nearby-locations h3,
+  .connectivity-grid h3 {
+    font-size: 20px;
+    margin-bottom: 18px;
+  }
+
+  .location-card {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .location-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .location-icon {
+    font-size: 32px;
+  }
+
+  .location-info h4 {
+    font-size: 14px;
+  }
+
+  .location-info .distance {
+    font-size: 12px;
+  }
+
+  .location-info .desc {
+    font-size: 12px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .benefit-card {
+   
+
+  .benefit-image {
+    height: 120px;
+  } padding: 16px 12px;
+  }
+
+  .benefit-icon {
+    font-size: 32px;
+  }
+
+  .benefit-card h4 {
+    font-size: 13px;
+  }
+
+  .benefit-card p {
+    font-size: 11px;
+  }
+
+  .distance-section {
+    padding: 18px;
+  }
+
+  .distance-section h3 {
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
+
+  .distance-chart {
+    gap: 20px;
+  }
+
+  .distance-label {
+    font-size: 12px;
+  }
+
+  .distance-time {
+    font-size: 11px;
+  }
+}
+
+/* ==================== ACCESSIBILITY ==================== */
+
+.location-card:focus,
+.benefit-card:focus {
+  outline: 2px solid #1e7e34;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .location-card,
+  .benefit-card {
+    transition: none;
+  }
+}

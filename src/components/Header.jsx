@@ -50,7 +50,10 @@ export default function Header() {
           {/* Center Title */}
           <div className="center-title">
             <h1>हरियाणा शहरी प्लॉट योजना</h1>
-            <p className="subtitle">(Haryana Shehri Plots Yojana, Govt. of Haryana)</p>
+            <p className="subtitle">(Haryana Shehri Plots Yojana, Govt. of Haryana)
+              <br />
+               Solra - village, district - palwal, Haryana
+            </p>
           </div>
 
           {/* Right Logo */}
@@ -62,9 +65,9 @@ export default function Header() {
         </div>
 
         {/* Project Info */}
-        <div className="project-info">
+        {/* <div className="project-info">
           Haryana Shehri Plots Yojana - Solra, Haryana
-        </div>
+        </div> */}
       </div>
 
       {/* Navigation Bar */}
@@ -84,7 +87,7 @@ export default function Header() {
             <Link to="/about" className="nav-link" onClick={closeMenu}>
               About Us
             </Link>
-            <Link to="/project" className="nav-link" onClick={closeMenu}>
+            <Link to="/amenities" className="nav-link" onClick={closeMenu}>
               Amenities
             </Link>
             <Link to="/project" className="nav-link" onClick={closeMenu}>

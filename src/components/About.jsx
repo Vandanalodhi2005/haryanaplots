@@ -2,15 +2,14 @@
 
 import React from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
-import Header from "./Header.jsx";
-import Footer from "./Footer.jsx";
+// Header/Footer provided by Layout
 import MidPageAbout from "./MidPageAbout.jsx";
 import MidAbout from "./MidAbout.jsx";
 
 function About() {
   return (
     <>
-      <Header />
+      {/* Header provided by Layout */}
       <section style={{ background: "#f6faf6", padding: "60px 0" }}>
         <Container>
           <Row className="align-items-center">
@@ -83,7 +82,7 @@ function About() {
         <MidAbout />
         <MidPageAbout />
       </section>
-      <Footer />
+      {/* Footer provided by Layout */}
     </>
   );
 }

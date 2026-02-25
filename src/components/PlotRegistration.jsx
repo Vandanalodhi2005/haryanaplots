@@ -7,7 +7,7 @@ import {
   FaIdCard,
   FaFilePdf,
 } from "react-icons/fa";
-import Header from "./Header.jsx";
+import BankDetails from "./BankDetails.jsx";
 
 export default function PlotRegistration() {
 
@@ -43,8 +43,6 @@ export default function PlotRegistration() {
 
   return (
     <>
-      <Header />
-
       <section className="bg-light py-5">
         <Container>
           <Row className="justify-content-center">
@@ -149,6 +147,8 @@ export default function PlotRegistration() {
           </Row>
         </Container>
       </section>
+
+      <BankDetails />
     </>
   );
 }

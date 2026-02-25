@@ -70,36 +70,119 @@
   color: #0f5132;
 }
 
-/* Responsive: stack on small screens */
+/* Responsive: sliding card sidebar on small screens */
 @media screen and (max-width: 820px) {
-  .payment-section { padding: 30px 12px; }
-  .payment-title { font-size: 20px; }
+  .payment-section { 
+    padding: 30px 0; 
+  }
+  
+  .payment-section .container {
+    padding: 0;
+  }
+  
+  .payment-title { 
+    font-size: 20px;
+    margin: 0 12px 20px 12px;
+    border-radius: 6px;
+  }
 
-  .payment-table { min-width: 0; display: block; }
-  .payment-table thead { display: none; }
+  .table-wrap {
+    overflow-x: auto;
+    overflow-y: hidden;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    padding: 0 12px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table-wrap::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .table-wrap::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  .table-wrap::-webkit-scrollbar-thumb {
+    background: #1e7e34;
+    border-radius: 3px;
+  }
+
+  .payment-table { 
+    min-width: 0;
+    display: flex;
+    gap: 16px;
+    width: fit-content;
+    border-collapse: separate;
+    background: transparent;
+  }
+
+  .payment-table thead {
+    display: none;
+  }
+
+  .payment-table tbody {
+    display: flex;
+    gap: 16px;
+  }
 
   .payment-table tbody tr {
-    display: block;
-    margin: 12px 12px;
-    border: 1px solid #f0ece6;
-    border-radius: 8px;
-    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    min-width: 280px;
+    flex-shrink: 0;
+    margin: 0;
+    border: 2px solid #e0d5c7;
+    border-radius: 12px;
+    padding: 20px;
     background: white;
+    box-shadow: 0 4px 16px rgba(30, 126, 52, 0.08);
+    transition: all 0.3s ease;
+  }
+
+  .payment-table tbody tr:active,
+  .payment-table tbody tr:hover {
+    box-shadow: 0 8px 24px rgba(30, 126, 52, 0.15);
+    transform: translateY(-4px);
+    border-color: #1e7e34;
   }
 
   .payment-table tbody td {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    padding: 8px 10px;
-    border-bottom: none;
+    padding: 10px 0;
+    border-bottom: 1px solid #f5f3f0;
     font-size: 14px;
+    text-align: left;
+  }
+
+  .payment-table tbody td:last-child {
+    border-bottom: none;
   }
 
   .payment-table tbody td::before {
     content: attr(data-label) ":";
     font-weight: 700;
-    color: #444;
-    margin-right: 8px;
+    color: #1e7e34;
+    margin-bottom: 6px;
+    font-size: 13px;
+  }
+
+  .payment-table tbody td[data-label="Area"] {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0f5132;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #f0ece6;
+  }
+
+  .payment-table tbody tr:nth-child(even) {
+    background: white;
   }
 }
 

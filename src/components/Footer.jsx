@@ -20,7 +20,7 @@ const Footer = () => {
 
               <p className="d-flex align-items-center gap-2 mb-2">
                 <FaEnvelope className="text-success" />
-                contact@deendayaljanawasyojna.org
+                info@haryanashehriplotyojana.com
               </p>
 
               <p className="d-flex align-items-center gap-2 mb-2">
@@ -40,9 +40,11 @@ const Footer = () => {
             <Col md={4} className="mb-4">
               <h5 className="fw-bold text-success mb-3">Quick Link</h5>
               <ul className="list-unstyled">
-                <li className="mb-2" onClick={() => navigate('/about')}>About</li>
-                <li className="mb-2" onClick={() => navigate('/contact')}>Contact Us</li>
-                <li className="mb-2" onClick={() => navigate('/refundpolicy')}>Refund Policy</li>
+                <li className="mb-2" onClick={() => navigate('/about')} style={{ cursor: 'pointer' }}>About</li>
+                <li className="mb-2" onClick={() => navigate('/amenities')} style={{ cursor: 'pointer' }}>Amenities</li>
+                <li className="mb-2" onClick={() => navigate('/location')} style={{ cursor: 'pointer' }}>Location Map</li>
+                <li className="mb-2" onClick={() => navigate('/contact')} style={{ cursor: 'pointer' }}>Contact Us</li>
+                <li className="mb-2" onClick={() => navigate('/refundpolicy')} style={{ cursor: 'pointer' }}>Refund Policy</li>
               </ul>
             </Col>
 

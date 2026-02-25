@@ -1,8 +1,8 @@
 import React from "react";
 import { FaEnvelope, FaPhoneAlt, FaUser, FaIdCard, FaFilePdf } from "react-icons/fa";
 import "./Contact.css";
-import Header from "./Header.jsx";
-import Footer from "./Footer.jsx";
+// Header/Footer provided by Layout
+import BankDetails from "./BankDetails.jsx";
 
 function Contact() {
   const handleSubmit = async (e) => {
@@ -34,7 +34,7 @@ function Contact() {
 
   return (
     <>
-      <Header />
+      {/* Header provided by Layout */}
 
       <section className="contact-section">
         <div className="contact-overlay">
@@ -124,7 +124,10 @@ function Contact() {
           </div>
         </div>
       </section>
-      <Footer />
+
+      <BankDetails />
+      
+      {/* Footer provided by Layout */}
     </>
     
   );

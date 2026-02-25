@@ -1,0 +1,151 @@
+/* Bank Details Section Styling */
+
+.bank-details-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 40px 0;
+  margin-top: 40px;
+  border-top: 3px solid #1e7e34;
+}
+
+.bank-details-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.bank-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.bank-header h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e7e34;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.bank-header .bank-name {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1e7e34;
+  border-bottom: 3px solid #ff9500;
+  padding-bottom: 12px;
+  display: inline-block;
+  letter-spacing: 1.5px;
+}
+
+.bank-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.bank-info-item {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(30, 126, 52, 0.1);
+  border-left: 4px solid #1e7e34;
+  transition: all 0.3s ease;
+  display: grid;
+  grid-template-columns: 140px auto 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.bank-info-item:hover {
+  box-shadow: 0 6px 16px rgba(30, 126, 52, 0.2);
+  transform: translateY(-2px);
+}
+
+.bank-info-item label {
+  font-weight: 800;
+  color: #1e7e34;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.bank-info-item span {
+  color: #ff9500;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.bank-info-item p {
+  margin: 0;
+  font-weight: 600;
+  color: #333;
+  font-size: 15px;
+}
+
+/* Responsive Design */
+
+@media screen and (max-width: 768px) {
+  .bank-details-section {
+    padding: 30px 0;
+    margin-top: 30px;
+  }
+
+  .bank-header .bank-name {
+    font-size: 24px;
+  }
+
+  .bank-info-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .bank-info-item {
+    grid-template-columns: 110px auto 1fr;
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .bank-info-item label {
+    font-size: 13px;
+  }
+
+  .bank-header h3 {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .bank-details-section {
+    padding: 20px 0;
+    margin-top: 20px;
+  }
+
+  .bank-header .bank-name {
+    font-size: 20px;
+    padding-bottom: 8px;
+  }
+
+  .bank-info-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 12px;
+    border-left: 3px solid #1e7e34;
+  }
+
+  .bank-info-item label {
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .bank-info-item span {
+    display: none;
+  }
+
+  .bank-info-item p {
+    font-size: 14px;
+  }
+
+  .bank-header h3 {
+    font-size: 12px;
+  }
+}

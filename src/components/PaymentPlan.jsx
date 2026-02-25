@@ -13,7 +13,7 @@ export default function PaymentPlan() {
     },
     {
       area: "200",
-      registration: "₹31,000",
+      registration: "₹21,000",
       twentyPercent: "₹8,80,000",
       remaining: "₹35,20,000",
       emi: "₹3,52,000",

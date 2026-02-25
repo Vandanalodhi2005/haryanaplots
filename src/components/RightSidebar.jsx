@@ -1,6 +1,7 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import { FaCheckCircle } from "react-icons/fa";
+import "./RightSidebar.css";
 
 const links = [
   { title: "MASTER PLAN", file: "/pdfs/master-plan.pdf" },
@@ -13,27 +14,29 @@ const links = [
 
 export default function RightSidebar() {
   return (
-    <Card className="shadow-sm">
-      <Card.Body>
-        <h5 className="text-success mb-3 fw-bold">
-          DOWNLOAD SECTION
-        </h5>
+    <div className="right-sidebar-card">
+      <Card className="shadow-sm">
+        <Card.Body>
+          <h5 className="text-success mb-3 fw-bold">
+            DOWNLOAD SECTION
+          </h5>
 
-        {links.map((item, i) => (
-          <p key={i} className="mb-2">
-            <FaCheckCircle className="text-success me-2" />
-            {item.title} —{" "}
-            <a
-              href={item.file}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-danger fw-semibold text-decoration-none"
-            >
-              CLICK HERE
-            </a>
-          </p>
-        ))}
-      </Card.Body>
-    </Card>
+          {links.map((item, i) => (
+            <p key={i} className="mb-2">
+              <FaCheckCircle className="text-success me-2" />
+              {item.title} —{" "}
+              <a
+                href={item.file}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-danger fw-semibold text-decoration-none"
+              >
+                CLICK HERE
+              </a>
+            </p>
+          ))}
+        </Card.Body>
+      </Card>
+    </div>
   );
 }
