@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
 import {
   FaUser,
@@ -7,37 +7,41 @@ import {
   FaIdCard,
   FaFilePdf,
 } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 import BankDetails from "./BankDetails.jsx";
 
 export default function PlotRegistration() {
+  useEffect(() => {
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
-    const payload = {
-      fullName: form.fullName.value,
-      phone: form.phone.value,
-      email: form.email.value,
-      aadhaarNumber: form.aadhaarNumber.value,
-    };
 
     try {
-      const res = await fetch("/api/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      const response = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          to_email: "contact@deendayaljanawasyojna.org",
+          from_name: form.fullName.value,
+          from_email: form.email.value,
+          phone: form.phone.value,
+          aadhaarNumber: form.aadhaarNumber.value,
+          message: "New Plot Registration Submitted",
+        }
+      );
 
-      const data = await res.json();
-
-      if (data.success) {
-        alert("Registration Submitted Successfully");
+      if (response.status === 200) {
+        alert("Registration Submitted Successfully! We'll contact you soon.");
         e.target.reset();
       } else {
-        alert(data.message || "Submission failed");
+        alert("Failed to submit registration. Please try again.");
       }
     } catch (error) {
-      alert("Server error. Please try again.");
+      console.error("Email error:", error);
+      alert("Error submitting registration. Please try again later.");
     }
   };
 
