@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import { FaEnvelope, FaPhoneAlt, FaUser, FaIdCard, FaFilePdf } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 import "./Contact.css";
-import Header from "./Header.jsx";
-import Footer from "./Footer.jsx";
 
 function Contact() {
   useEffect(() => {
@@ -48,17 +46,14 @@ function Contact() {
   };
 
   return (
-    <>
-      <Header />
+    <section className="contact-section">
+      <div className="contact-overlay">
+        <h2 className="contact-title">Connect With Us</h2>
+        <p className="contact-subtitle">
+          Get complete guidance for Haryana Shehri Plots Yojana
+        </p>
 
-      <section className="contact-section">
-        <div className="contact-overlay">
-          <h2 className="contact-title">Connect With Us</h2>
-          <p className="contact-subtitle">
-            Get complete guidance for Haryana Shehri Plots Yojana
-          </p>
-
-          <div className="contact-container">
+        <div className="contact-container">
             {/* Left Form */}
             <form
               className="contact-form"
@@ -141,10 +136,7 @@ function Contact() {
           </div>
         </div>
       </section>
-      <Footer />
-    </>
-    
-  );
-}
-
-export default Contact;
+    );
+  }
+  
+  export default Contact;

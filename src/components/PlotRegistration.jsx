@@ -1,14 +1,12 @@
 import React, { useEffect } from "react";
-import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
 import {
   FaUser,
   FaPhoneAlt,
   FaEnvelope,
   FaIdCard,
-  FaFilePdf,
 } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
-import BankDetails from "./BankDetails.jsx";
+import "./Contact.css";
 
 export default function PlotRegistration() {
   useEffect(() => {
@@ -29,7 +27,7 @@ export default function PlotRegistration() {
           from_email: form.email.value,
           phone: form.phone.value,
           aadhaarNumber: form.aadhaarNumber.value,
-          message: "New Plot Registration Submitted",
+          message: form.message.value,
         }
       );
 
@@ -46,113 +44,106 @@ export default function PlotRegistration() {
   };
 
   return (
-    <>
-      <section className="bg-light py-5">
-        <Container>
-          <Row className="justify-content-center">
-            <Col lg={7} md={9}>
-              <Card className="shadow-lg border-0 rounded-4">
+    <section className="contact-section">
+      <div className="contact-overlay">
+        <h2 className="contact-title">Plot Registration</h2>
+        <p className="contact-subtitle">
+          Haryana Shehri Plots Yojana
+        </p>
 
-                {/* Header */}
-                <div className="bg-success text-white text-center py-4 rounded-top">
-                  <h3 className="fw-bold mb-1">Plot Registration</h3>
-                  <p className="mb-0">Haryana Shehri Plots Yojana</p>
-                </div>
+        <div className="contact-container">
+          {/* Form */}
+          <form
+            className="contact-form"
+            onSubmit={handleSubmit}
+          >
+            <div className="form-group">
+              <label>
+                <FaUser /> Full Name <span>*</span>
+              </label>
+              <input
+                type="text"
+                name="fullName"
+                placeholder="Enter your full name"
+                required
+              />
+            </div>
 
-                <Card.Body className="p-4 p-md-5">
-                  <Form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label>
+                <FaPhoneAlt /> Phone Number <span>*</span>
+              </label>
+              <input
+                type="tel"
+                name="phone"
+                placeholder="10-digit mobile number"
+                pattern="[0-9]{10}"
+                required
+              />
+            </div>
 
-                    {/* Name */}
-                    <Form.Group className="mb-3">
-                      <Form.Label className="fw-semibold">
-                        <FaUser className="me-2 text-success" />
-                        Full Name *
-                      </Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="fullName"
-                        placeholder="Enter your full name"
-                        required
-                      />
-                    </Form.Group>
+            <div className="form-group">
+              <label>
+                <FaEnvelope /> Email Address <span>*</span>
+              </label>
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter email ID"
+                required
+              />
+            </div>
 
-                    {/* Phone */}
-                    <Form.Group className="mb-3">
-                      <Form.Label className="fw-semibold">
-                        <FaPhoneAlt className="me-2 text-success" />
-                        Phone Number *
-                      </Form.Label>
-                      <Form.Control
-                        type="tel"
-                        name="phone"
-                        placeholder="10-digit mobile number"
-                        pattern="[0-9]{10}"
-                        required
-                      />
-                    </Form.Group>
+            <div className="form-group">
+              <label>
+                <FaIdCard /> Aadhaar Number <span>*</span>
+              </label>
+              <input
+                type="text"
+                name="aadhaarNumber"
+                placeholder="12-digit Aadhaar number"
+                pattern="[0-9]{12}"
+                maxLength="12"
+                required
+              />
+            </div>
 
-                    {/* Email */}
-                    <Form.Group className="mb-3">
-                      <Form.Label className="fw-semibold">
-                        <FaEnvelope className="me-2 text-success" />
-                        Email ID *
-                      </Form.Label>
-                      <Form.Control
-                        type="email"
-                        name="email"
-                        placeholder="Enter your email address"
-                        required
-                      />
-                    </Form.Group>
+            <div className="form-group">
+              <label>Message <span>*</span></label>
+              <textarea
+                name="message"
+                placeholder="Write your query here..."
+                required
+              />
+            </div>
 
-                    {/* Aadhaar Number */}
-                    <Form.Group className="mb-3">
-                      <Form.Label className="fw-semibold">
-                        <FaIdCard className="me-2 text-success" />
-                        Aadhaar Card Number *
-                      </Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="aadhaarNumber"
-                        placeholder="12-digit Aadhaar number"
-                        pattern="[0-9]{12}"
-                        maxLength="12"
-                        required
-                      />
-                    </Form.Group>
+            <button type="submit" className="submit-btn">
+              Submit Registration
+            </button>
+          </form>
 
-                    {/* Aadhaar PDF removed as requested */}
+          {/* Contact Info */}
+          <div className="contact-info">
+            <h4>Registration Info</h4>
 
-                    {/* Consent */}
-                    <Form.Group className="mb-4">
-                      <Form.Check
-                        type="checkbox"
-                        required
-                        label="I confirm that the information provided is true and correct."
-                      />
-                    </Form.Group>
+            <div className="info-box">
+              <FaEnvelope />
+              <span>contact@deendayaljanawasyojna.org</span>
+            </div>
 
-                    {/* Submit */}
-                    <div className="d-grid">
-                      <Button
-                        variant="success"
-                        size="lg"
-                        className="fw-bold"
-                        type="submit"
-                      >
-                        Submit Registration
-                      </Button>
-                    </div>
+            <div className="info-box">
+              <FaPhoneAlt />
+              <span>+91 8700559249</span>
+            </div>
 
-                  </Form>
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-
-      <BankDetails />
-    </>
+            <p className="info-note">
+              Our team will contact you within 24 working hours.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
+
+
