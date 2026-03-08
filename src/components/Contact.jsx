@@ -1,40 +1,55 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaEnvelope, FaPhoneAlt, FaUser, FaIdCard, FaFilePdf } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 import "./Contact.css";
-// Header/Footer provided by Layout
-import BankDetails from "./BankDetails.jsx";
+import Header from "./Header.jsx";
+import Footer from "./Footer.jsx";
 
 function Contact() {
+  useEffect(() => {
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const form = e.target;
-    const payload = {
-      name: form.name.value,
-      phone: form.phone.value,
-      email: form.email.value,
-      aadhaarNumber: form.aadhaarNumber.value,
-      message: form.message.value,
+    
+    const formData = {
+      name: e.target.name.value,
+      phone: e.target.phone.value,
+      email: e.target.email.value,
+      aadhaarNumber: e.target.aadhaarNumber.value,
+      message: e.target.message.value,
     };
 
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
+    try {
+      const response = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          to_email: "contact@deendayaljanawasyojna.org",
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          aadhaarNumber: formData.aadhaarNumber,
+          message: formData.message,
+        }
+      );
 
-    const data = await res.json();
-
-    if (data.success) {
-      alert("Message submitted successfully");
-      e.target.reset();
-    } else {
-      alert(data.message || "Submission failed");
+      if (response.status === 200) {
+        alert("Message submitted successfully! We'll contact you within 24 hours.");
+        e.target.reset();
+      } else {
+        alert("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Email error:", error);
+      alert("Error sending message. Please try again later.");
     }
   };
 
   return (
     <>
-      {/* Header provided by Layout */}
+      <Header />
 
       <section className="contact-section">
         <div className="contact-overlay">
@@ -45,7 +60,11 @@ function Contact() {
 
           <div className="contact-container">
             {/* Left Form */}
-            <form className="contact-form" onSubmit={handleSubmit}>
+            <form
+              className="contact-form"
+              onSubmit={handleSubmit}
+              encType="multipart/form-data"
+            >
               <div className="form-group">
                 <label>
                   <FaUser /> Full Name <span>*</span>
@@ -87,8 +106,6 @@ function Contact() {
                 />
               </div>
 
-              {/* Aadhaar PDF removed as requested */}
-
               <div className="form-group">
                 <label>Message <span>*</span></label>
                 <textarea
@@ -124,10 +141,7 @@ function Contact() {
           </div>
         </div>
       </section>
-
-      <BankDetails />
-      
-      {/* Footer provided by Layout */}
+      <Footer />
     </>
     
   );
